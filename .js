@@ -55,7 +55,7 @@ function draw() {
   let spectrum = fft.analyze();
   beginShape();
   vertex(0, height); 
-  //for loop using the length of spectrum length
+
   for (let i = 0; i < spectrum.length; i++) {
     vertex(map(log(i), 0, log(spectrum.length), 0, width), map(spectrum[i], 0 , 255, height, 0))
   }
@@ -68,10 +68,3 @@ function touchstarted() {
 getAudioContext().resume();
 }
 
-
-// Assigns & init out play/stop buttons
-//   playButton = createButton('Play').position(10, 10). mousePressed(() => {selectNoise.start();});
-//   stopButton = createButton('Stop').position(10, 30).mousePressed(() => {selectNoise.stop();});
-
-// function mousePressed() {console.log(fft.analyze())
-//   }
