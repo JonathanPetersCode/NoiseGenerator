@@ -10,7 +10,7 @@ function setup() {
   
   fft = new p5.FFT();
 
-
+// Button to start/stop noise
   toggleOnOff = createButton('play').style('font-family', "courier");
   toggleOnOff.position(10, 10);
   toggleOnOff.mousePressed(function() {
@@ -22,7 +22,7 @@ function setup() {
       toggleOnOff.html('Stop')
     }
   });
-
+//Allows user to choose type of noise 
   chooseNoise = createSelect();
   chooseNoise.position(60, 10).style('font-family', "courier");
   chooseNoise.option('white');
@@ -32,7 +32,7 @@ function setup() {
     selectNoise.setType(chooseNoise.value());
   fill (chooseNoise.value());
   });
-
+// Sets Voume
   setVolume = createSlider(-60, 0, -60, 1)//60db -60db -> 0db
   setVolume.position(130, 10);
   setVolume.changed(function() {
